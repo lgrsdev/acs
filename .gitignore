@@ -162,4 +162,5 @@ buildNumber.properties
 *.rdb
 
 # End of https://www.gitignore.io/api/java,redis,macos,maven,intellij
-/.idea/
+
+.idea/
