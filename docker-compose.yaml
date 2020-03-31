@@ -1,0 +1,29 @@
+version: '3.7'
+
+#  Define Services
+services:
+  # spring-boot service
+  application:
+    build:
+      context: . # Configuration requires the path of the Dockerfile to be built relative to docker-compose.yml
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080" # Map native 8080 port to container 8080 port
+    restart: always
+    depends_on:
+      - redis # Build first with dependent services
+    environment: # Setting environment variables
+      spring.redis.host: redis
+#    networks: # Network connection and redis
+#      - backend
+  redis:
+    image: redis
+    command: [ "redis-server", "--protected-mode", "no" ]
+    hostname:
+      localhost
+    ports:
+      - "6379:6379"
+#    networks:
+#      - backend
+#networks:
+#  backend:
