@@ -25,7 +25,9 @@ Build with Docker
 git clone to each instance and then:
 
 * Run the following command on argus1.lgrsdev.com instance:<br>
-docker-compose -f docker-compose-redis.yaml up --build -d
+docker-compose -f docker-compose-redis.yaml build<br>
+docker-compose -f docker-compose-redis.yaml up
 
 * Run the following commands on argus2.lgrsdev.com instance:<br>
-docker-compose -f docker-compose.yaml up --build -d
+docker-compose -f docker-compose.yaml build<br>
+docker-compose -f docker-compose.yaml up
