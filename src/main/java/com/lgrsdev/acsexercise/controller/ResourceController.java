@@ -1,5 +1,6 @@
 package com.lgrsdev.acsexercise.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.lgrsdev.acsexercise.model.Resource;
 import com.lgrsdev.acsexercise.service.ResourceService;
 import org.slf4j.Logger;
@@ -17,8 +18,8 @@ public class ResourceController {
     ResourceService resourceService;
 
     @PostMapping
-    public Resource postResource(@RequestBody Resource resource) {
-        return resourceService.postResource(resource);
+    public void postResource(@RequestBody String json) throws JsonProcessingException {
+        resourceService.postResource(json);
     }
 
     @GetMapping

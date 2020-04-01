@@ -1,17 +1,19 @@
 package com.lgrsdev.acsexercise.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
+import lombok.Builder;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 
-@RedisHash
+@RedisHash @Builder
 public class Resource {
 
     @Id
-    private long id = 1;
+    private Long id;
 
-    @Getter
-    @JsonProperty("something")
-    private String something;
+    @JsonProperty("key")
+    private String key;
+
+    @JsonProperty("value")
+    private Object value;
 }
