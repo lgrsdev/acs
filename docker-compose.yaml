@@ -7,8 +7,6 @@ services:
     build:
       context: . # Configuration requires the path of the Dockerfile to be built relative to docker-compose.yml
       dockerfile: Dockerfile
-    hostname:
-      localhost
     restart: always
     environment: # Setting environment variables
       spring.redis.host: 172.31.31.135
