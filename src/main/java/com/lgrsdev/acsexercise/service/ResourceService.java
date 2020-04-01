@@ -5,19 +5,14 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lgrsdev.acsexercise.model.Resource;
 import com.lgrsdev.acsexercise.repository.ResourceRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.io.Serializable;
 import java.util.Map;
 import java.util.Optional;
 
 @Service
-public class ResourceService implements Serializable {
-
-    private static final Logger log = LoggerFactory.getLogger(ResourceService.class);
+public class ResourceService {
 
     public static final long RESOURCE_ID = 1L;
 
@@ -38,6 +33,6 @@ public class ResourceService implements Serializable {
     }
 
     private Resource buildResource(Map.Entry<String, JsonNode> entry) {
-        return Resource.builder().id(RESOURCE_ID).key(entry.getKey()).value(entry.getValue().textValue()).build();
+        return Resource.builder().id(RESOURCE_ID).key(entry.getKey()).value(entry.getValue().asText()).build();
     }
 }

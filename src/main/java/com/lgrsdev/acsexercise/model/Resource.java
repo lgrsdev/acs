@@ -15,5 +15,5 @@ public class Resource {
     private String key;
 
     @JsonProperty("value")
-    private Object value;
+    private String value;
 }
