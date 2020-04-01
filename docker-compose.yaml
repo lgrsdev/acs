@@ -9,8 +9,6 @@ services:
       dockerfile: Dockerfile
     hostname:
       localhost
-    ports:
-      - "8080:8080" # Map native 8080 port to container 8080 port
     restart: always
     environment: # Setting environment variables
       spring.redis.host: 172.31.31.135
