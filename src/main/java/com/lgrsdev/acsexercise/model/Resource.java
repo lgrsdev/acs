@@ -9,11 +9,9 @@ import org.springframework.data.redis.core.RedisHash;
 public class Resource {
 
     @Id
-    private Long id;
-
-    @JsonProperty("key")
+    @JsonProperty("resource")
     private String key;
 
-    @JsonProperty("value")
+    @JsonProperty("resourceEntity")
     private String value;
 }

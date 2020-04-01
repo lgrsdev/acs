@@ -1,29 +1,24 @@
 package com.lgrsdev.acsexercise.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.lgrsdev.acsexercise.model.Resource;
 import com.lgrsdev.acsexercise.service.ResourceService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/resource")
+@RequestMapping("/api")
 public class ResourceController {
-
-    private static final Logger log = LoggerFactory.getLogger(ResourceController.class);
 
     @Autowired
     ResourceService resourceService;
 
-    @PostMapping
-    public void postResource(@RequestBody String json) throws JsonProcessingException {
-        resourceService.postResource(json);
+    @PostMapping("/{resource}")
+    public void postResource(@PathVariable String resource, @RequestBody String resourceEntity) {
+        resourceService.postResource(resource, resourceEntity);
     }
 
-    @GetMapping
-    public Resource getResource() {
-        return resourceService.getResource();
+    @GetMapping("/{resource}")
+    public Resource getResource(@PathVariable String resource) {
+        return resourceService.getResource(resource);
     }
 }
