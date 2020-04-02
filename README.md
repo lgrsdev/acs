@@ -12,6 +12,8 @@ The API, implemented with Spring rest controller, was extended to support multip
 
 For deployment, there are two docker-compose files: both build and run the jar, but one file also install Redis and is for a single instance use (As mentioned, other instances just connect to this Redis).<br>
 
+argus.lgrsdev.com was defined to point to both servers and with extreme load one can add servers to the DNS and get it distributed.
+
 Security
 ---------
 Ngnix is used for TLS termination configured with mozills SSL config generator (https://ssl-config.mozilla.org/)<br>The certificate is a short lived TLS certificate from Let's Encrypt. <br>
