@@ -10,7 +10,7 @@ In addition, Redis cluster also gives a degree of availability during partitions
 
 The API, implemented with Spring rest controller, was extended to support multiple resources by using /{resource} path variable as the entity key. That way, Post and Get requests can be sent with /api/resource1, /api/resource2, /api/someOtherResourceKey and so on.<br>
 
-For deployment, there are two docker-compose files: both build and run the jar, but one file also install Redis and is for a single instance use (As mentioned, other instances just connect to this Redis).<br>
+For deployment, there are two docker-compose files: both set the ngnix and the application, but one file also install Redis and is for a single instance use (As mentioned, other instances just connect to this Redis).<br>
 
 argus.lgrsdev.com was defined to point to both servers and with extreme load one can add servers to the DNS and get it distributed.
 
