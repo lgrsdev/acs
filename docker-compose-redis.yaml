@@ -21,7 +21,7 @@ services:
       - ./tls:/tls
     ports:
       - "80:80"
-      - "443:443"
+      - "8080:8080"
   redis:
     image: redis
     command: [ "redis-server", "--protected-mode", "no" ]
