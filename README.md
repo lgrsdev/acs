@@ -20,8 +20,8 @@ Ngnix is used for TLS termination configured with mozilla SSL config generator
 In production though, would be better configure the certificate to automatically rotated, but since this is an exercise DNS challenge was used.<br>
 Communication between instances and Redis is through internal network.
 
-https://www.ssllabs.com/ssltest/analyze.html?d=argus.lgrsdev.com&latest<br>
 ![Alt text](ssl_grade.png?raw=true "ssl_grade_A+")
+https://www.ssllabs.com/ssltest/analyze.html?d=argus.lgrsdev.com&latest
 
 Test
 ----
