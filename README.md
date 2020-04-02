@@ -27,6 +27,7 @@ Import acs_tests.postman_collection.json file (in root project directory) to Pos
 
 Build with Docker
 ------------------------
+cd acs
 git clone to each instance and then:
 
 * Run the following command on argus1.lgrsdev.com instance:<br>
