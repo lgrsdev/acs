@@ -13,11 +13,11 @@ public class ResourceService {
     @Autowired
     ResourceRepository repository;
 
-    public void postResource(Resource resource) {
-        repository.save(resource);
+    public void postResource(String resourceName, String resourceEntity) {
+        repository.save(Resource.builder().key(resourceName).value(resourceEntity).build());
     }
 
-    public Optional<Resource> getResourceEntity(String resourceName) {
+    public Optional<Resource> getResource(String resourceName) {
         return repository.findById(resourceName);
     }
 }

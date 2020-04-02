@@ -16,12 +16,12 @@ public class ResourceController {
 
     @PostMapping("/{resource}")
     public void postResource(@PathVariable("resource") String resourceName, @RequestBody String resourceEntity) {
-        resourceService.postResource(Resource.builder().key(resourceName).value(resourceEntity).build());
+        resourceService.postResource(resourceName, resourceEntity);
     }
 
     @GetMapping("/{resource}")
     public String getResource(@PathVariable("resource") String resourceName) {
-        return resourceService.getResourceEntity(resourceName)
+        return resourceService.getResource(resourceName)
                 .map(Resource::getValue)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, resourceName + " not found"));
     }
