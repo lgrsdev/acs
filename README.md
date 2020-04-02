@@ -23,8 +23,8 @@ Communication between instances and Redis is through internal network.
 
 Test
 ----
-curl -k -X POST -d {"something":"blabla"} https://argus1.lgrsdev.com/api/resource<br>
-curl -k https://argus2.lgrsdev.com/api/resource
+curl -X POST -d {"something":"blabla"} https://argus1.lgrsdev.com/api/resource<br>
+curl https://argus2.lgrsdev.com/api/resource
 
 Test with Postman
 ------------------
