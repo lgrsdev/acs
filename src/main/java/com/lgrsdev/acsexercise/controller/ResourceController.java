@@ -18,6 +18,6 @@ public class ResourceController {
 
     @GetMapping("/{resource}")
     public String getResource(@PathVariable("resource") String resourceName) {
-        return resourceService.getResource(resourceName);
+        return resourceService.getResourceEntity(resourceName);
     }
 }
