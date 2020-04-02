@@ -1,8 +1,11 @@
 package com.lgrsdev.acsexercise.controller;
 
+import com.lgrsdev.acsexercise.model.Resource;
 import com.lgrsdev.acsexercise.service.ResourceService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/api")
@@ -13,11 +16,13 @@ public class ResourceController {
 
     @PostMapping("/{resource}")
     public void postResource(@PathVariable("resource") String resourceName, @RequestBody String resourceEntity) {
-        resourceService.postResource(resourceName, resourceEntity);
+        resourceService.postResource(Resource.builder().key(resourceName).value(resourceEntity).build());
     }
 
     @GetMapping("/{resource}")
     public String getResource(@PathVariable("resource") String resourceName) {
-        return resourceService.getResourceEntity(resourceName);
+        return resourceService.getResourceEntity(resourceName)
+                .map(Resource::getValue)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, resourceName + " not found"));
     }
 }
