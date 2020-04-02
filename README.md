@@ -21,6 +21,11 @@ In production though, would be better configure the certificate to automatically
 https://www.ssllabs.com/ssltest/analyze.html?d=argus.lgrsdev.com&latest<br>
 Communication between instances and Redis is through internal network.
 
+Test
+----
+curl -k -X POST -d {"something":"blabla"} https://argus1.lgrsdev.com/api/resource<br>
+curl -k https://argus2.lgrsdev.com/api/resource
+
 Test with Postman
 ------------------
 Import acs_tests.postman_collection.json file (in root project directory) to Postman and send the requests.
