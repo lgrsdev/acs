@@ -21,7 +21,7 @@ In production though, would be better configure the certificate to automatically
 Communication between instances and Redis is through internal network.
 
 ![Alt text](ssl_grade.png?raw=true "ssl_grade_A+")
-https://www.ssllabs.com/ssltest/analyze.html?d=argus.lgrsdev.com&latest
+check it live: https://www.ssllabs.com/ssltest/analyze.html?d=argus.lgrsdev.com&latest
 
 Test
 ----
