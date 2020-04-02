@@ -1,12 +1,15 @@
 {
 	"info": {
-		"_postman_id": "5fe7877d-6fbd-4ea4-915c-e4cafdc428c6",
+		"_postman_id": "e5532e55-2f9f-4f8c-b363-4afaac6ef1fa",
 		"name": "acs_tests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "post",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -20,28 +23,16 @@
 					}
 				},
 				"url": {
-					"raw": "argus1.lgrsdev.com:8080/api/resource",
+					"raw": "https://argus1.lgrsdev.com/api/resource",
+					"protocol": "https",
 					"host": [
 						"argus1",
 						"lgrsdev",
 						"com"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"resource"
-					],
-					"query": [
-						{
-							"key": "key",
-							"value": "testKey",
-							"disabled": true
-						},
-						{
-							"key": "value",
-							"value": "testVal",
-							"disabled": true
-						}
 					]
 				},
 				"description": "argus1.lgrsdev.com:8080/api/resource"
@@ -54,13 +45,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "argus2.lgrsdev.com:8080/api/resource",
+					"raw": "https://argus2.lgrsdev.com/api/resource",
+					"protocol": "https",
 					"host": [
 						"argus2",
 						"lgrsdev",
 						"com"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"resource"
