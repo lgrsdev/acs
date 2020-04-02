@@ -18,8 +18,10 @@ Security
 ---------
 Ngnix is used for TLS termination configured with mozills SSL config generator (https://ssl-config.mozilla.org/)<br>The certificate is a short lived TLS certificate from Let's Encrypt. <br>
 In production though, would be better configure the certificate to automatically rotated, but since this is an exercise DNS challenge was used.<br>
-https://www.ssllabs.com/ssltest/analyze.html?d=argus.lgrsdev.com&latest<br>
 Communication between instances and Redis is through internal network.
+
+![Alt text](ssl_grade_A+.png?raw=true "ssl_grade_A+")
+https://www.ssllabs.com/ssltest/analyze.html?d=argus.lgrsdev.com&latest<br>
 
 Test with Postman
 ------------------
